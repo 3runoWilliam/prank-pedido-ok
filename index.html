@@ -6,17 +6,25 @@
     <title>Daniel Incrivel 💕</title>
 
     <style>
-        body{
+        body {
             background-color: red;
             margin: 0;
             padding: 0;
         }
 
-        .painel{
+        .painel {
             background-color: white;
             border-radius: 20px;
             text-align: center;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .fim {
+            background-color: red;
+            border-radius: 20px;
+            text-align: center;
             margin: 20px;
             padding: 20px;
         }
@@ -50,6 +58,15 @@
             margin-left: 20px;
         }
 
+        #playButton {
+            height: 50px;
+            width: auto;
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+            font-size: 16px; /* Tamanho do texto ajustado para dispositivos móveis */
+        }
+
         #background-audio {
             display: none;
         }
@@ -60,12 +77,16 @@
                 height: 500px;
                 margin: auto;
             }
+            .fim {
+                width: 500px;
+                height: 500px;
+                margin: auto;
+            }
         }
     </style>
 
 </head>
-<!-- Adicione um botão para iniciar a reprodução de áudio -->
-<button id="playButton">Iniciar Áudio</button>
+
 <body>
     <div class="painel">
         <br>
@@ -79,17 +100,19 @@
             <button id="sim">SIM</button>
         </a>
 
-
         <button onmouseover="fuja()" id="nao">NÃO</button>
 
         <audio id="background-audio" preload="auto">
             <source src="./audio2.mp3" type="audio/mpeg">
         </audio>
-
-        <br><br><br>
-        
-        <h5>© 2023 Bruno William. Todos os direitos autorais reservados.</h5>
     </div>
+
+    <footer>
+        <div class="fim">
+            <!-- Adicione um botão para iniciar a reprodução de áudio -->
+            <button id="playButton">clica essa parada para sair o áudio</button>
+        </div>
+    </footer>
 
     <script>
         function fuja(){
@@ -127,7 +150,6 @@
             audio.pause();
             audio.currentTime = 0;
         }
-
     </script>
 </body>
 </html>
