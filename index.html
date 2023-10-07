@@ -6,18 +6,27 @@
     <title>Daniel Incrivel 💕</title>
 
     <style>
+        body{
+            background-color: red;
+            margin: 0;
+            padding: 0;
+        }
+
         .painel{
-            width: 500px;
-            height: 500px;
             background-color: white;
-            margin: auto;
             border-radius: 20px;
             text-align: center;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
         }
 
-        body{
-            background-color: red;
+        h1, h3, h5 {
+            margin: 10px;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         #sim{
@@ -45,6 +54,13 @@
             display: none;
         }
 
+        @media (min-width: 600px) {
+            .painel {
+                width: 500px;
+                height: 500px;
+                margin: auto;
+            }
+        }
     </style>
 
 </head>
@@ -64,7 +80,7 @@
         <button onmouseover="fuja()" id="nao">NÃO</button>
 
         <audio id="background-audio" preload="auto">
-            <source src="./George Michael - Careless Whisper.mp3" type="audio/mpeg">
+            <source src="./audio2.mp3" type="audio/mpeg">
         </audio>
 
         <br><br><br>
@@ -86,20 +102,17 @@
 
         }
 
-        // Função para iniciar a reprodução do áudio em segundo plano
         function playBackgroundAudio() {
             var audio = document.getElementById('background-audio');
             audio.play();
         }
 
-        // Event listener para iniciar a reprodução quando a página carregar
         window.addEventListener('load', playBackgroundAudio);
 
-        // Função para parar a reprodução do áudio
         function stopBackgroundAudio() {
             var audio = document.getElementById('background-audio');
             audio.pause();
-            audio.currentTime = 0; // Reinicia o áudio para o início
+            audio.currentTime = 0;
         }
 
     </script>
