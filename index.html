@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Incrivel 💕</title>
+
+    <style>
+        .painel{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        body{
+            background-color: red;
+        }
+
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -80px;
+        }
+
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 20px;
+        }
+
+        #background-audio {
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="painel">
+        <br>
+        <h1> você é especial </h1>
+
+        <img src="https://media.tenor.com/dhlZUNv56aUAAAAM/neymar-njr.gif">
+
+        <h3> vamos para a fazenda? </h3>
+
+        <a href="https://media.tenor.com/fgDbuHNH0KUAAAAC/ent%C3%A3o-ele%C3%A9.gif">
+            <button id="sim">SIM</button>
+        </a>
+
+        <button onmouseover="fuja()" id="nao">NÃO</button>
+
+        <audio id="background-audio" preload="auto">
+            <source src="./George Michael - Careless Whisper.mp3" type="audio/mpeg">
+        </audio>
+
+        <br><br><br>
+        <h5>© 2023 Bruno William. Todos os direitos autorais reservados.</h5>
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao")
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+            var aleatorioX = Math.floor(Math.random() * maxX)
+            var aleatorioY = Math.floor(Math.random() * maxY)
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+        }
+
+        // Função para iniciar a reprodução do áudio em segundo plano
+        function playBackgroundAudio() {
+            var audio = document.getElementById('background-audio');
+            audio.play();
+        }
+
+        // Event listener para iniciar a reprodução quando a página carregar
+        window.addEventListener('load', playBackgroundAudio);
+
+        // Função para parar a reprodução do áudio
+        function stopBackgroundAudio() {
+            var audio = document.getElementById('background-audio');
+            audio.pause();
+            audio.currentTime = 0; // Reinicia o áudio para o início
+        }
+
+    </script>
+</body>
+</html>
