@@ -64,6 +64,8 @@
     </style>
 
 </head>
+<!-- Adicione um botão para iniciar a reprodução de áudio -->
+<button id="playButton">Iniciar Áudio</button>
 <body>
     <div class="painel">
         <br>
@@ -77,10 +79,11 @@
             <button id="sim">SIM</button>
         </a>
 
+
         <button onmouseover="fuja()" id="nao">NÃO</button>
 
         <audio id="background-audio" preload="auto">
-            <source src="https://www.dropbox.com/scl/fi/55rkfypcaffn7r9r7dmls/George-Michael-Careless-Whisper.mp3?rlkey=kz44biznfakpue4qtj8c18jjc&dl=0" type="audio/mpeg">
+            <source src="./audio2.mp3" type="audio/mpeg">
         </audio>
 
         <br><br><br>
@@ -110,6 +113,15 @@
 
         window.addEventListener('load', playBackgroundAudio);
 
+        // Adicione um evento de clique ao botão para iniciar a reprodução de áudio
+        var playButton = document.getElementById("playButton");
+        playButton.addEventListener("click", function() {
+            var audio = document.getElementById('background-audio');
+            audio.play().catch(function(error) {
+                console.error("Erro ao reproduzir áudio:", error);
+            });
+        });
+
         function stopBackgroundAudio() {
             var audio = document.getElementById('background-audio');
             audio.pause();
@@ -119,4 +131,3 @@
     </script>
 </body>
 </html>
-
